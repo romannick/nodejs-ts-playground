@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/apps/product"
+  },
+  "references": [
+    { "path": "../../libs/db" },
+    { "path": "../../libs/error" },
+    { "path": "../../libs/log" },
+    { "path": "../../libs/metrics" },
+    { "path": "../../libs/middlewares" },
+    { "path": "../../libs/utils" },
+    { "path": "../../libs/types" }
+  ]
+}

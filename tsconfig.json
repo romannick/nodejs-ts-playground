@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "incremental": true,
+    "target": "es2020",
+    "module": "commonjs",
+    "declaration": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
+    "strict": false,
+    "composite": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@libs/db": ["libs/db"],
+      "@libs/error": ["libs/error"],
+      "@libs/log": ["libs/log"],
+      "@libs/metrics": ["libs/metrics"],
+      "@libs/middlewares": ["libs/middlewares"],
+      "@libs/utils": ["libs/utils"],
+      "@libs/types": ["libs/types"]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+services:
+  mysql-nodejs:
+    image: mysql:8.0
+    container_name: mysql-nodejs
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - nodejs_mysql_data:/var/lib/mysql
+      - ./docker-volumes/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - app
+  jaeger-nodejs:
+    image: jaegertracing/all-in-one:1.57
+    container_name: jaeger
+    ports:
+      - "16686:16686"  # Web UI
+      - "4317:4317"    # OTLP gRPC
+      - "4318:4318"    # OTLP HTTP
+      - "14268:14268"  # Legacy HTTP (optional)
+      - "6831:6831/udp"
+      - "6832:6832/udp"
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+      # Optional: increase debug visibility
+      - LOG_LEVEL=debug
+    restart: unless-stopped
+    networks:
+      - app
+volumes:
+  nodejs_mysql_data:
+networks:
+  app:

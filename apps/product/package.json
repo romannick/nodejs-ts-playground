@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-ts-playground-product",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ../../dist/apps/product/src/app.js",
+    "dev": "rm -rf dist/apps/product && node -r ts-node/register -r tsconfig-paths/register --watch ./src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "../../node_modules/.bin/eslint .",
+    "lint:fix": "../../node_modules/.bin/eslint . --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}

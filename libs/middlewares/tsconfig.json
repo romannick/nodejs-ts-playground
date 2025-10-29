@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../dist/libs/middlewares"
+  },
+  "include": ["/**/*.ts"],
+  "exclude": ["node_modules", "dist", "/**/*.test.ts"],
+  "references": [
+    { "path": "../types" }
+  ]
+}

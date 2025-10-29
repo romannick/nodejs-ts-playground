@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../dist/libs/error"
+  },
+  "include": ["/**/*.ts"],
+  "exclude": ["node_modules", "dist", "/**/*.test.ts"],
+  "references": [
+    { "path": "../log" }
+  ]
+}
