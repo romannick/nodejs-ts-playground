@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: nodejs-mysql-db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - nodejs_mysql_data:/var/lib/mysql
+      - ./docker-volumes/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - app
+volumes:
+  nodejs_mysql_data:
+networks:
+  app:
